@@ -77,7 +77,7 @@ class Workspace:
         # TODO: we could keep track of dirty files and validate only those
         if self.__rope is None or self.__rope_config != rope_config:
             rope_folder = rope_config.get("ropeFolder")
-            if rope_folder:
+            if "ropeFolder" in rope_config:
                 self.__rope = Project(self._root_path, ropefolder=rope_folder)
             else:
                 self.__rope = Project(self._root_path)
