@@ -179,9 +179,7 @@ def test_jedi_completion_with_fuzzy_enabled(config, workspace) -> None:
 
     assert items
 
-    expected = "commonprefix(m)"
-    if JEDI_VERSION == "0.18.0":
-        expected = "commonprefix(list)"
+    expected = "isabs(s)"
     assert items[0]["label"] == expected
 
     # Test we don't throw with big character
